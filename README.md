@@ -30,3 +30,9 @@ To install and test `Units` theme you can use 2 ways:
 	* add unit title, coordinates in appropriate metabox and use shortcode `[yandex_map]` in post content, then Publish unit.
 	* open page `http://yoursite/unit/` to get list all published units.
 	* if you get 404 error, then login to admin area, open `Settings->Permalinks` page, make sure `Common Settings` option was set to `Post name` and click `Save Changes`.	
+
+## Upgrade Notice ##
+
+### 1.0.0 ###
+
+Init version.
