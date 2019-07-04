@@ -6,7 +6,7 @@ Requires PHP: 5.6
 
 ## Description ##
 
-`Units` theme was created and testes using WAMP.
+`Units` theme was created and tested using WAMP.
 
 ## Install ##
 
