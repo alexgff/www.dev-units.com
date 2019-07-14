@@ -1,0 +1,330 @@
+/*
+Theme Name: Listable Child
+Theme URI: http://temdo.ru/
+Author: Temdo
+Author URI: http://temdo.ru/
+Description: A directory WordPress theme that will help you create and manage a local or global listings site.
+Template: listable
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: listable-child-theme
+Domain Path: /languages/
+Tags: light, white, red
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Listable is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/* ADD YOUR NEW CSS RULES HERE */
+
+/* This file assumes you wish to add new CSS rules that will overwrite the ones in the parent's CSS files
+If you wish however, you can copy the whole style.css file from the parent here and hack at it - see functions.php for more details.
+In that case please remember that you still need to retain the header above (replace the header of the parent style.css with the one above),
+specifically the 'Template: listable' line. */
+
+/* @font-face {font-family: MuseoSansCyrl Light; font-weight:300; src: url(/wp-content/themes/listable-child-master/assets/fonts/MuseoSansCyrl_300.otf); format('truetype');}
+@font-face {font-family: MuseoSansCyrl Bold;  font-weight:700; src: url(/wp-content/themes/listable-child-master/assets/fonts/MuseoSansCyrl_700.otf); format('truetype');} */
+
+body {
+    opacity: 0;
+	transition: opacity 1s;
+}
+
+a#scroll_back_to_top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 35px;
+    border: 2px solid #ff4d58;
+	background: white;
+    z-index: 10;
+	visibility: hidden;
+	transition: all .6s;
+	backface-visibility: hidden;
+}
+a#scroll_back_to_top svg {
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%) rotateZ(-90deg);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotateZ(-90deg);
+	transition: all 0.3s ease;
+}
+a#scroll_back_to_top.off {
+    opacity: 0;
+}
+a#scroll_back_to_top.on {
+    opacity: 1;
+    visibility: visible;
+}
+a#scroll_back_to_top:hover {
+    background-color: rgb(255, 255, 255);
+}
+a#scroll_back_to_top:hover svg {
+    top: 45%;
+}
+
+.page-listings .site-footer, .post-type-archive-job_listing .site-footer{
+	display: block;
+}
+.select-categories, .search_region, .select-tags {
+    display: block;
+}
+.select-categories, .search_region {
+    margin: 0;
+    width: auto;
+}
+.myflex.no-map .search_jobs {
+    padding: 20px;
+}
+.search_jobs--frontpage .search-filter-wrapper select {
+	display: block;
+	line-height: 24px;
+}
+@media only screen and (min-width: 900px){
+.search_jobs--frontpage .search-filter-wrapper {
+    margin-bottom: 0;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}}
+.job_search_form .chosen-container-multi .chosen-choices li.search-field input[type=text],
+.job_search_form .chosen-container-single .chosen-single span {
+    line-height: 1.9em;
+}
+.search_jobs--frontpage .search-filter-wrapper select {
+    line-height: 1.1em;
+}
+.search-form .search_jobs--frontpage .search-field,
+.search_jobs--frontpage .search_location #search_location,
+.search_jobs--frontpage .select-region-dummy,
+.search_jobs--frontpage.search_jobs select,
+.search_jobs--frontpage .chosen-single span,
+.search_jobs--frontpage-facetwp input,
+.search_jobs--frontpage-facetwp select {
+    padding: 10px 25px;
+}
+.job_filters .showing_jobs {
+	padding: 10px 30px 0;
+}
+.messagebox{
+	max-width: 50%;
+}
+.card__featured-tag:not(.card__branch-tag) {
+    background-color: #ff8c05;
+    color: white;
+    display: block;
+    font-size: 13px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 20px;
+    box-shadow: 2px 2px 3px 0px #0606064f;
+    left: 0;
+    font-weight: 400;
+    letter-spacing: normal;
+    transform: rotateZ(-3deg);
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 0 5px white;
+}
+.card__branch-tag {
+    border-radius: 0 4px 4px 0;
+    position: absolute;
+    left: 0px;
+    font-size: 0.73em;
+    top: 11px;
+    padding: 2px 11px 2px 10px;
+    font-weight: 600;
+    letter-spacing: normal;
+}
+.job_filters .sort_tools {
+    padding: 20px 40px 3px 40px;
+    margin: -10px 9px 0 9px;
+	text-align: center;
+	font-weight: normal;
+}
+.job_filters .sort_tools #title {
+    color: #9598a4;
+}
+.job_filters .sort_tools button.tool {
+    margin: 7px;
+    border-bottom: 1px dashed #ff6666;
+    cursor: pointer;
+    position: relative;
+}
+.job_filters .sort_tools.inactive{
+	display: none;
+}
+.job_filters button.tool.asc:after,
+.job_filters button.tool.desc:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: -10px;
+}
+.job_filters .sort_tools .asc,
+.job_filters .sort_tools .desc {
+    color: #ff6666;
+}
+.job_filters button.tool.asc:after {
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 5px solid #ff4d5a;
+	top: 44%;
+}
+.job_filters button.tool.desc:after {
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 5px solid #ff4d5a;
+	top: 47%;
+}
+
+/* WIDGETS */
+
+.listing-sidebar-custom-taxonomies,
+.listing-sidebar-custom-taxonomies.widget {
+	margin-bottom: 24px;
+	margin-left: -24px;
+	margin-right: -24px;
+	margin-top: 24px;
+	padding-left: 24px;
+	padding-right: 24px;
+}
+.listing-sidebar-custom-taxonomies {
+	background: white;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.075); 
+	border-top: 1px solid rgba(0, 0, 0, 0.075);
+	padding-bottom: 24px;
+	padding-top: 24px;
+}
+@media only screen and (min-width: 480px) {
+	.listing-sidebar-custom-taxonomies,
+	.listing-sidebar-custom-taxonomies.widget {
+		margin-bottom: 40px;
+		margin-left: -60px;
+		margin-right: -60px;
+		margin-top: 40px;
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+}
+@media only screen and (min-width: 900px) {
+	.listing-sidebar-custom-taxonomies,
+	.listing-sidebar-custom-taxonomies.widget {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}
+@media only screen and (min-width: 480px) {
+	.listing-sidebar-custom-taxonomies{
+		padding-bottom: 40px; 
+		padding-top: 40px;
+	}
+}
+@media only screen and (min-width: 900px) {
+	.listing-sidebar-custom-taxonomies{
+		border: 1px solid rgba(0, 0, 0, 0.075);
+		border-radius: 4px;
+		padding-bottom: 24px;
+		padding-top: 24px;
+	}
+}
+.listing-sidebar-custom-taxonomies .category-text-no-icon:before{
+    content: '»';
+    color: #676767;
+    position: absolute;
+    left: -10px;
+}
+.listing-sidebar-custom-taxonomies span.category-text {
+	position: relative;
+    padding: 0 5px 0 5px;
+}
+
+/* FOOTER */
+.widget--footer {
+    text-align: left;
+}
+.widget--footer h2.widget-title {
+    color: white;
+    font-size: 1.218em;
+}
+
+/* SHORTCODES */
+.halfer {
+	display: flex;
+	flex-direction: row;
+}
+.one_half {flex-basis: 50%;}
+.one_half:first-of-type {
+	padding-right: 3.3%;
+}
+.one_half:last-of-type {
+	padding-left: 3.3%;
+}
+.one_half:not(:last-of-type) {
+    border-right: 1px solid #717171;
+}
+
+@media screen and (max-width: 480px){
+	.one_half {
+		flex-basis: 100%;
+	}
+}
+@media screen and (max-width: 480px){
+	.halfer {
+		flex-direction: column;
+	}
+	.one_half:first-of-type {
+		padding-right: 0;
+	}
+	.one_half:last-of-type {
+		padding-left: 0;
+		margin-top: 10px;
+	}
+	.one_fourth, .one_third, .one_half, .two_third, .three_fourth {
+		border-right: none !important;
+	}
+}
+
+
+.error404.page-listings {
+    background-color: white;
+}
+.error404 .entry-search-header {
+	background-color: #efefef;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+    padding: 70px 0;
+    text-align: center;
+}
+.error404 .entry-search-content{
+	margin: 30px auto;
+    padding: 0 30px;
+    max-width: 760px;
+	text-align: center;
+}
+/** */
+.side-menu-wrapper {
+	width: 250px;
+}
+.side-menu li {
+	list-style-type: none;
+	padding: 1em 0;
+	background-color: rgb(250, 250, 250);
+}
+.side-menu li:hover {
+	cursor: pointer;
+	background-color: rgb(255, 255, 255);
+}
+.side-menu .menu-item-last {
+	text-align: center;
+}
